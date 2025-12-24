@@ -39,29 +39,29 @@ public class AutoPuzzlePiece : MonoBehaviour
     }
 
     void OnMouseUp()
+{
+    if (isCorrect || targetSpot == null) return;
+
+    isDragging = false;
+
+    float dist = Vector2.Distance(transform.position, targetSpot.position);
+
+    if (dist <= snapDistance)
     {
-        if (isCorrect || targetSpot == null) return;
+        transform.position = targetSpot.position;
+        isCorrect = true;
 
-        isDragging = false;
+        sr.sortingOrder = 1;
+        GetComponent<Collider2D>().enabled = false;
 
-        float dist = Vector2.Distance(transform.position, targetSpot.position);
-
-        if (dist <= snapDistance)
-        {
-            transform.position = targetSpot.position;
-            isCorrect = true;
-
-            sr.sortingOrder = 1;
-            GetComponent<Collider2D>().enabled = false;
-
-            GameManager.instance.AddScore(cleanName);
-            ChecklistManager.instance.MarkCompleted(cleanName);
-        }
-        else
-        {
-            sr.sortingOrder = 5;
-        }
+        GameManager.instance.PiecePlaced();
+        ChecklistManager.instance.MarkCompleted(cleanName);
     }
+    else
+    {
+        sr.sortingOrder = 5;
+    }
+}
 
     void Update()
     {

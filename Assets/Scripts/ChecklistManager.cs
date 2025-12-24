@@ -9,8 +9,6 @@ public class ChecklistManager : MonoBehaviour
     public Transform contentParent;
 
     private Dictionary<string, ChecklistItemUI> checklistDict = new();
-    private int totalPiece;
-    private int placedPiece;
 
     void Awake()
     {
@@ -25,7 +23,6 @@ public class ChecklistManager : MonoBehaviour
     void GenerateChecklist()
     {
         GameObject[] pieces = GameObject.FindGameObjectsWithTag("PuzzlePiece");
-        totalPiece = pieces.Length;
 
         foreach (GameObject piece in pieces)
         {
@@ -40,24 +37,13 @@ public class ChecklistManager : MonoBehaviour
                 checklistDict.Add(cleanName, item);
             }
         }
-
-        UpdateCounter();
     }
-
-
 
     public void MarkCompleted(string cityName)
     {
         if (checklistDict.TryGetValue(cityName, out ChecklistItemUI item))
         {
             item.SetChecked();
-            placedPiece++;
-            UpdateCounter();
         }
-    }
-
-    void UpdateCounter()
-    {
-        GameManager.instance.UpdatePieceCounter(placedPiece, totalPiece);
     }
 }
