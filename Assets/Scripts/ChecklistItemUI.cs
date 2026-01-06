@@ -1,47 +1,66 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class ChecklistItemUI : MonoBehaviour
 {
     public TMP_Text cityNameText;
-    // public Image checkIcon;
 
-    public string CityName { get; private set; }
+    RectTransform rect;
+
+    Color defaultColor = Color.white;
+    Color doneColor = new Color(0.2f, 0.8f, 0.2f);
+
+    void Awake()
+    {
+        rect = GetComponent<RectTransform>();
+    }
 
     public void Setup(string cityName)
     {
-        CityName = cityName;
         cityNameText.text = cityName;
 
-        // checkIcon.gameObject.SetActive(false);
-        // checkIcon.transform.localScale = Vector3.zero;
+        cityNameText.color = defaultColor;
+        cityNameText.alpha = 0.6f;
+
+        rect.localScale = Vector3.one;
     }
 
     public void SetChecked()
     {
-        // checkIcon.gameObject.SetActive(true);
-        StartCoroutine(CheckAnim());
+        StopAllCoroutines();
+        StartCoroutine(BounceAnim());
     }
 
-    IEnumerator CheckAnim()
+    IEnumerator BounceAnim()
+    {
+        float duration = 0.15f;
+
+        yield return ScaleTo(1.2f, duration);
+        yield return ScaleTo(1f, duration);
+
+        cityNameText.color = doneColor;
+        cityNameText.alpha = 1f;
+    }
+
+    IEnumerator ScaleTo(float target, float duration)
     {
         float t = 0f;
-        float duration = 0.2f;
+        Vector3 start = rect.localScale;
+        Vector3 end = Vector3.one * target;
 
         while (t < duration)
         {
             t += Time.deltaTime;
-            float scale = Mathf.Lerp(0f, 1.2f, t / duration);
-            // checkIcon.transform.localScale = Vector3.one * scale;
+            float p = t / duration;
+
+            rect.localScale = Vector3.Lerp(start, end, p);
+            cityNameText.color = Color.Lerp(defaultColor, doneColor, p);
+            cityNameText.alpha = Mathf.Lerp(0.6f, 1f, p);
+
             yield return null;
         }
 
-        // settle ke normal
-        // checkIcon.transform.localScale = Vector3.one;
-
-        // Optional: ubah warna text
-        cityNameText.color = new Color(0.2f, 0.7f, 0.2f);
+        rect.localScale = end;
     }
 }
