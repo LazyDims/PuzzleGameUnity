@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     void UpdatePieceCounter()
     {
-        pieceCounterText.text = $"Piece {placedPiece}/{totalPiece}";
+        pieceCounterText.text = $"{placedPiece}/{totalPiece}";
     }
 
     void WinGame()
