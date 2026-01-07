@@ -26,6 +26,10 @@ public class PauseManager : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
+
+        AudioManager.instance.PlaySFX(
+            AudioManager.instance.pauseSound
+        );
     }
 
     public void ResumeGame()
@@ -33,6 +37,10 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+
+        AudioManager.instance.PlaySFX(
+            AudioManager.instance.resumeSound
+        );
     }
 
     public void RestartGame()
