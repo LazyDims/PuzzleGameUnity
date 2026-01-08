@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     void WinGame()
     {
         winPanel.ShowWin(placedPiece, totalPiece);
+        AudioManager.instance.PlaySFX(
+            AudioManager.instance.winSound
+        );
     }
     public void RestartGame()
     {
