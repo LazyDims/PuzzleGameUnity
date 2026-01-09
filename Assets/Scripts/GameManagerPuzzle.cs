@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     void WinGame()
     {
         winPanel.ShowWin(placedPiece, totalPiece);
+        AudioManager.instance.FadeOutBGM(0.4f);
         AudioManager.instance.PlaySFX(
             AudioManager.instance.winSound
         );

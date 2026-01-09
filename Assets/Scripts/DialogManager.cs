@@ -13,7 +13,7 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0f;
+        // Time.timeScale = 0f;
         gameObject.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());

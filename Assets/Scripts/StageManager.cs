@@ -35,24 +35,52 @@ public class StageManager : MonoBehaviour
             "JawaTimur"
         };
 
-        stageMap["Sumatra"] = new List<string>() { "Sumatra" };
+        stageMap["Sumatra"] = new List<string>() { 
+            "Aceh",
+            "Bengkulu",
+            "Lampung",
+            "Riau",
+            "Jambi",
+            "Sumatera Utara",
+            "Sumatera Barat",
+            "Sumatera Selatan",
+            };
         stageMap["Kalimantan"] = new List<string>() { "Kalimantan" };
         stageMap["Sulawesi"] = new List<string>() { "Sulawesi" };
-        stageMap["Papua"] = new List<string>() { "Papua" };
+        stageMap["Papua"] = new List<string>()
+        {
+            "Papua",
+            "PapuaBarat",
+            "PapuaBaratDaya",
+            "PapuaPegunungan",
+            "PapuaTengah",
+            "PapuaSelatan"
+        };
     }
-
-    // DIPANGGIL DARI MENU
     public void LoadRegion(string region)
     {
+        if (!stageMap.ContainsKey(region))
+        {
+            Debug.LogError("Region tidak ditemukan: " + region);
+            return;
+        }
+
         currentRegion = region;
         currentIndex = Random.Range(0, stageMap[region].Count);
+
+        // 🎵 pastikan BGM nyala
+        AudioManager.instance.PlayBGM(
+            AudioManager.instance.idleBGM
+        );
+
         SceneManager.LoadScene(stageMap[region][currentIndex]);
     }
-
-    // DIPANGGIL SAAT NEXT
     public void NextStage()
     {
         currentIndex++;
+        AudioManager.instance.PlayBGM(
+            AudioManager.instance.idleBGM
+        );
 
         if (currentIndex < stageMap[currentRegion].Count)
         {

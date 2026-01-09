@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 181323616}
   - component: {fileID: 181323615}
   - component: {fileID: 181323618}
+  - component: {fileID: 181323619}
   m_Layer: 5
   m_Name: Papua
   m_TagString: Untagged
@@ -582,6 +583,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 181323619}
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 181323618}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
         m_MethodName: PlayClick
@@ -644,6 +657,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf9aea8bda00724da0290c5a9ccfbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &181323619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181323613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09df16e57ae3d07479a270b72fbabc53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionName: Papua
 --- !u!1 &216401796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1680,7 @@ GameObject:
   - component: {fileID: 1770158832}
   - component: {fileID: 1770158831}
   - component: {fileID: 1770158834}
+  - component: {fileID: 1770158835}
   m_Layer: 5
   m_Name: Sumatra
   m_TagString: Untagged
@@ -1737,6 +1764,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1770158835}
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1770158832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,6 +1826,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf9aea8bda00724da0290c5a9ccfbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1770158835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770158829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09df16e57ae3d07479a270b72fbabc53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionName: Papua
 --- !u!1 &1888336062
 GameObject:
   m_ObjectHideFlags: 0

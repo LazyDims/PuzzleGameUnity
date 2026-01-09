@@ -20,4 +20,46 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JawaTimur.unity
     guid: 314554b9181f07a45beb7bc8ce34c50d
+  - enabled: 1
+    path: Assets/Scenes/Papua.unity
+    guid: 3d5081107805439489809881cef95d62
+  - enabled: 1
+    path: Assets/Scenes/PapuaBarat.unity
+    guid: 3a16b176373f6da4f81a4cb860ef8b7f
+  - enabled: 1
+    path: Assets/Scenes/PapuaBaratDaya.unity
+    guid: bd01c4ef941acda4e91ba339694b834e
+  - enabled: 1
+    path: Assets/Scenes/PapuaPegunungan.unity
+    guid: 32c93148038262945a43e205f6b5ccc9
+  - enabled: 1
+    path: Assets/Scenes/PapuaTengah.unity
+    guid: f16fac2cdff17304dbe82cfff2122b79
+  - enabled: 1
+    path: Assets/Scenes/PapuaSelatan.unity
+    guid: 8ef15380726ed074fb3e136c78d1f113
+  - enabled: 1
+    path: Assets/Scenes/Aceh.unity
+    guid: e6e8c024b31e5d34bbaa3b0652674656
+  - enabled: 1
+    path: Assets/Scenes/Bengkulu.unity
+    guid: 26b01dd48386c244e83adf0c2e9bc6a6
+  - enabled: 1
+    path: Assets/Scenes/Jambi.unity
+    guid: bfba16d3c87a1854f8ef6390d58f97a2
+  - enabled: 1
+    path: Assets/Scenes/Lampung.unity
+    guid: 9283bb80802a1624ca11ff2f5f513591
+  - enabled: 1
+    path: Assets/Scenes/Riau.unity
+    guid: 7a93d823b21382747aa2e239eb4f0bb2
+  - enabled: 1
+    path: Assets/Scenes/Sumatera Barat.unity
+    guid: 08d860ad9a256aa42aac38acecb3c13d
+  - enabled: 1
+    path: Assets/Scenes/Sumatera Selatan.unity
+    guid: 2d8562da6127bc14e8569b833023fcd7
+  - enabled: 1
+    path: Assets/Scenes/Sumatera Utara.unity
+    guid: cc4601c169145104ba4bd0acc31ac92b
   m_configObjects: {}
